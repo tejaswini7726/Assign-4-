@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script src="lo.js"></script>
+</head>
+<body>
+    <form action="post">
+        <label for="a">Enter the value of a:</label>
+        <input type="text" id="a" name="number">
+        <br></br>
+        <label for="b">Enter the value of b:</label>
+        <input type="text" id="b" name="number">
+    </form>
+    <br></br>
+        <input type="button" id="add"  value="add" onclick="cal(add)">
+        <input type="button" id="subtract" value="subtract" onclick="cal(sub)">
+        <input type="button" id="multiply" value="multiply" onclick="cal(multiply)">
+        <input type="button" id="division" value="division" onclick="cal(division)">
+
+        <script>
+            function cal(btn){
+                var a=parseInt(document.getElementById("a").value)
+                var b=parseInt(document.getElementById("b").value)
+               if(btn.value=="add"){
+               alert("sum: "+(a+b))
+                }else if(btn.value=="subtract"){
+                    alert("sub: "+(a-b))
+                }else if(btn.value=="multiply"){
+                    alert("mul: "+(a*b))
+                }else{
+                    alert("div: "+(a/b))
+                }
+            }
+        </script>
+</body>
+</html> 

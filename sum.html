@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>sum:</p>
+    <div id="output"></div>
+
+    <script>
+        function printhtml(result){
+        document.getElementById("output").innerHTML+=result+"<br>";
+        }
+        var a=[1,2,3,4,5,6,7]
+        var i=0,sum=0
+        console.log(a.length)
+        while(i<a.length){
+          sum=sum+a[i]
+          i++
+        }
+        console.log("sum is: ",sum)
+        printhtml(sum)
+    </script>
+</body>
+</html>

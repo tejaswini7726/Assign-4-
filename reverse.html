@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Reverse:</p>
+<div id="output"></div>
+
+    <script>
+        function printhtml(result){
+        document.getElementById("output").innerHTML+=result +"<br>";
+        }
+        var s =prompt("Enter the string:")
+        var reverse=""
+        for(i=s.length-1;i>=0;i--){
+        reverse=reverse+s[i]
+        }
+        console.log("Reverse of the string is:",reverse)
+        printhtml(reverse)
+    </script>
+</body>
+</html>

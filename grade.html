@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Grade Calculator</h2>
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" placeholder="Enter student name" required>
+        <label for="marks1">Subject 1 Marks:</label>
+        <input type="number" id="marks1" min="0" max="100" required>
+        <label for="marks2">Subject 2 Marks:</label>
+        <input type="number" id="marks2" min="0" max="100" required>
+        <label for="marks3">Subject 3 Marks:</label>
+        <input type="number" id="marks3" min="0" max="100" required>
+        <label for="marks4">Subject 4 Marks:</label>
+        <input type="number" id="marks4" min="0" max="100" required>
+        <label for="marks5">Subject 5 Marks:</label>
+        <input type="number" id="marks5" min="0" max="100" required>
+        <button onclick="calculateGrade()">Calculate Grade</button>
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            let name = document.getElementById('name').value;
+            let marks = [];
+            for (let i = 1; i <= 5; i++) {
+                let mark = parseInt(document.getElementById('marks' + i).value) || 0;
+                marks.push(mark);
+            }
+
+            let total = marks.reduce((a, b) => a + b, 0);
+            let average = total / 5;
+            let grade = '';
+
+            if (average >= 90) grade = 'A';
+            else if (average >= 80) grade = 'B';
+            else if (average >= 70) grade = 'C';
+            else if (average >= 60) grade = 'D';
+            else grade = 'F';
+
+            document.getElementById('result').innerHTML = 
+                `Student: ${name} <br> Total Marks: ${total} <br> Average: ${average.toFixed(2)} <br> Grade: ${grade}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Prime number:</p>
+<div id="output"></div>
+
+    <script>
+        function printhtml(result){
+        document.getElementById("output").innerHTML+=result +"<br>";
+    }
+        var p = prompt("Enter the number of prime numbers:");
+    p = parseInt(p);
+    
+    var count = 0; 
+    var num = 2;
+    
+    while (count < p) { 
+        var isPrime = 1; 
+        for (var j = 2; j < num; j++) { 
+            if (num % j == 0) {
+                isPrime = 0; 
+                break;
+            }
+        }
+    
+        if (isPrime == 1) { 
+            console.log(num);
+            printhtml(num);
+            count++;
+        }
+    
+        num++;
+    }
+
+    </script>
+
+</body>
+</html>
